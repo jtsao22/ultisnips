@@ -141,7 +141,7 @@ ${1:void} ${2:function_name}(${3})
 endsnippet
 
 snippet mfun "function" b
-${1:void} `!p snip.rv = snip.basename or "name"`}::${3:function_name}(${4})
+${1:void} `!p snip.rv = snip.basename or "name"`::${3:function_name}(${4})
 {
 	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
 }
