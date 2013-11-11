@@ -11,7 +11,7 @@ snippet cl "class .. (class)"
 class ${1:`!p snip.rv = snip.basename or "name"`}
 {
 public:
-	${1/(\w+).*/$1/} (${2:arguments});
+	${1/(\w+).*/$1/}($2);
 	virtual ~${1/(\w+).*/$1/} ();
 
 private:
@@ -23,7 +23,7 @@ snippet ns "namespace .. (namespace)"
 namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
 {
 	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
-}${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
+} // $1
 endsnippet
 
 snippet readfile "read file (readF)"
@@ -47,6 +47,76 @@ endsnippet
 
 snippet tp "template <typename ..> (template)"
 template <typename ${1:_InputIter}>
+endsnippet
+
+snippet fori "fori"
+for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
+	${4:/* code */}
+}
+endsnippet
+
+# switch statement
+snippet sw "sw"
+switch(${1})
+{
+	case ${2}:
+		${3}
+		break;
+	default:
+		break;
+}
+endsnippet
+
+# case statement
+snippet ca "ca"
+case ${1}:
+	${2}
+	break;
+endsnippet
+
+# cout 
+snippet co "co"
+std::cout << "${1}" << std::endl;
+${2}
+endsnippet
+
+# cout variable
+snippet cov "cov"
+std::cout << ${1} << std::endl;
+${2}
+endsnippet
+
+snippet /** "/**"
+/** ${1}
+ */
+endsnippet
+
+snippet .h ".h"
+/******************************************************************************
+ * Copyright (c) 2013 Amazon Technologies, Inc. All rights reserved.
+ *
+ * PROPRIETARY/CONFIDENTIAL
+ *
+ * Use is subject to license terms.
+ *****************************************************************************/
+
+#ifndef $1_H
+#define $1_H
+$2
+#endif // $1_H
+endsnippet
+
+snippet .cpp ".cpp"
+/******************************************************************************
+ * Copyright (c) 2013 Amazon Technologies, Inc. All rights reserved.
+ *
+ * PROPRIETARY/CONFIDENTIAL
+ *
+ * Use is subject to license terms.
+ *****************************************************************************/
+
+#include ${1}
+ $2
 endsnippet
 
 # vim:ft=snippets:
