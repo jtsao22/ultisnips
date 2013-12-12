@@ -74,7 +74,7 @@ case ${1}:
 	break;
 endsnippet
 
-# cout 
+# cout
 snippet co "co"
 std::cout << "${1}" << std::endl;
 ${2}
@@ -92,28 +92,28 @@ snippet /** "/**"
 endsnippet
 
 snippet .h ".h"
-/******************************************************************************
+/*
  * Copyright (c) 2013 Amazon Technologies, Inc. All rights reserved.
  *
  * PROPRIETARY/CONFIDENTIAL
  *
  * Use is subject to license terms.
- *****************************************************************************/
+ */
 
-#ifndef $1_H
-#define $1_H
+#ifndef ${1:`!v toupper(Filename('$1_H_', 'UNTITLED_H_'))`}
+#define $1
 $2
-#endif // $1_H
+#endif // $1
 endsnippet
 
 snippet .cpp ".cpp"
-/******************************************************************************
+/*
  * Copyright (c) 2013 Amazon Technologies, Inc. All rights reserved.
  *
  * PROPRIETARY/CONFIDENTIAL
  *
  * Use is subject to license terms.
- *****************************************************************************/
+ */
 
 #include ${1}
  $2
