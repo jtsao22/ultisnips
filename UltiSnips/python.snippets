@@ -524,4 +524,12 @@ class Test${1:Class}(${2:unittest.TestCase}):
 		${7:pass}
 endsnippet
 
+snippet args
+parser = argparse.ArgumentParser(description="${1}")
+parser.add_argument("${2}", help="${3}")
+
+args = parser.parse_args()
+
+endsnippet
+
 # vim:ft=snippets:
