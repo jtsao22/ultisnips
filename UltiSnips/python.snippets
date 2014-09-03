@@ -528,11 +528,40 @@ class Test${1:Class}(${2:unittest.TestCase}):
 endsnippet
 
 snippet args
-parser = argparse.ArgumentParser(description="${1}")
-parser.add_argument("${2}", help="${3}")
+parser = argparse.ArgumentParser(description='${1}')
+parser.add_argument('${2}', help='${3}')
 
 args = parser.parse_args()
+endsnippet
 
+snippet start
+#!/usr/bin/env python
+
+'''
+Copyright (c) 2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+
+$1
+
+'''
+import argparse
+
+def parse_args():
+	parser = argparse.ArgumentParser(description='${2}')
+	parser.add_argument('${3}', help='${4}')
+
+	args = parser.parse_args()
+	return args
+
+def main():
+	${5}
+
+if __name__ == '__main__':
+	main()
+endsnippet
+
+snippet im
+import ${1}
 endsnippet
 
 # vim:ft=snippets:
