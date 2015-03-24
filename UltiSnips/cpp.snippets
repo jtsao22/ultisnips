@@ -93,30 +93,30 @@ endsnippet
 
 snippet .h ".h"
 /*
- * Copyright (c) 2013 Amazon Technologies, Inc. All rights reserved.
+ * Copyright (c) 2015 $1. All rights reserved.
  *
  * PROPRIETARY/CONFIDENTIAL
  *
  * Use is subject to license terms.
  */
 
-#ifndef ${1:`!v toupper(Filename('$1_H_', 'UNTITLED_H_'))`}
-#define $1
-$2
-#endif // $1
+#ifndef ${2:`!v toupper(Filename('$1_H_', 'UNTITLED_H_'))`}
+#define $2
+$3
+#endif // $2
 endsnippet
 
 snippet .cpp ".cpp"
 /*
- * Copyright (c) 2013 Amazon Technologies, Inc. All rights reserved.
+ * Copyright (c) 2015 $1. All rights reserved.
  *
  * PROPRIETARY/CONFIDENTIAL
  *
  * Use is subject to license terms.
  */
 
-#include ${1}
- $2
+#include ${2}
+ $3
 endsnippet
 
 # vim:ft=snippets:
